@@ -12,6 +12,13 @@ fi
 
 #call brew installer (it needs to continue if failure)
 
+if ! command -v emacs &> /dev/null
+then
+    echo "Installing Emacs base..."
+    brew install emacs
+    exit
+fi
+
 echo "Installing spacemacs..."
 git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cp dotfiles/spacemacs ~/.spacemacs
