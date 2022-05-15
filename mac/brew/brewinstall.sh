@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-brew install --cask --require-sha $(cat formulae.txt)
+brew install --cask $(cat formulae.txt)

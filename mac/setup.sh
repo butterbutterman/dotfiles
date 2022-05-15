@@ -2,7 +2,13 @@
 
 echo "doing things..."
 
-#check if homebrew is installed, if not then install it here
+## Check if homebrew is installed. Iff not, install it.
+if ! command -v brew &> /dev/null
+then
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    exit
+fi
 
 #call brew installer (it needs to continue if failure)
 
