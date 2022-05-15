@@ -1,0 +1,9 @@
+rectangle
+joplin
+visual-studio-code
+firefox
+brave-browser
+tor-browser
+telegram
+discord
+slack
