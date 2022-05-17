@@ -9,7 +9,13 @@ then
 fi
 
 ## Install Spacemacs
-echo "Installing spacemacs..."
-git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
-cp dotfiles/spacemacs ~/.spacemacs
-echo "Spacemacs installed!"
+if [ ! -d "$HOME/.emacs.d" ];
+then
+    echo "Installing spacemacs..."
+    git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    cp dotfiles/spacemacs ~/.spacemacs
+    echo "Spacemacs installed!"
+exit
+else
+    echo "Emacs configurations already exist at ~/.emacs.d"
+fi
