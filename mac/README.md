@@ -1,2 +1,6 @@
 # MacOS dev setup
-and such
+
+clone this repo and run 
+```
+./setup.sh
+```
