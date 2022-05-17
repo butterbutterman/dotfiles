@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "Setting up MacOS!"
+echo "Setting up MacOS:"
 
 ## Check if homebrew is installed. If not, install it.
 if ! command -v brew &> /dev/null
