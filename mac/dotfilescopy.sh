@@ -2,45 +2,17 @@
 
 echo "Copying dotfiles (and other configuration files):"
 
-## TODO instead of copying and pasting the same if/else a billion times, make this a loop
-## vimrc
-if [ ! -f "$HOME/.vimrc" ];
-then
-    echo "Copying Vim configurations..."
-    cp dotfiles/vimrc ~/.vimrc
-    echo "Vim configurations copied!"
-exit
-else
-    ###### rewrite this as a prompt to overwrite existing vimrc
-    echo "Installing Vim configurations..."
-    cp dotfiles/vimrc ~/.vimrc
-    echo "Vim configurations installed!"
-fi
+## need to remove the directory name for file copying - saving it here to reuse
+DOTFILESDIR="dotfiles"
 
-## zshrc
-if [ ! -f "$HOME/.zshrc" ];
-then
-    echo "Copying zsh configurations..."
-    cp dotfiles/vimrc ~/.vimrc
-    echo "Zsh configurations copied!"
-exit
-else
-    ###### rewrite this as a prompt to overwrite existing zshsrc
-    echo "Copying zsh configurations..."
-    cp dotfiles/vimrc ~/.vimrc
-    echo "Zsh configurations copied!"
-fi
-
-## spacemacs
-if [ ! -f "$HOME/.spacemacs" ];
-then
-    echo "Copying spacemacs configurations..."
-    cp dotfiles/spacemacs ~/.spacemacs
-    echo "Spacemacs configurations copied!"
-exit
-else
-    ###### rewrite this as a prompt to overwrite existing spacemacs
-    echo "Copying spacemacs configurations..."
-    cp dotfiles/spacemacs ~/.spacemacs
-    echo "Spacemacs configurations copied!"
-fi
+## Loop through each file in dotfiles/, check if the corresponding file already exists in ~/, copy if not, skip if so
+for d in $DOTFILESDIR/*
+do
+    if [ ! -f "$HOME/.${d#"$DOTFILESDIR"/}" ]; then
+        echo "Copying ${d#"$DOTFILESDIR"/} configurations..."
+        cp "$d" "$HOME/.${d#"$DOTFILESDIR"/}"
+        echo "${d#"$DOTFILESDIR"/} configurations copied!"
+    else
+        echo "$HOME/.${d#"$DOTFILESDIR"/} is already present, copying skipped."
+    fi
+done
