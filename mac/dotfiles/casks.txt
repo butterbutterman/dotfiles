@@ -1,4 +1,5 @@
 rectangle
+bitwarden
 joplin
 visual-studio-code
 firefox
