@@ -10,7 +10,7 @@ then
     exit
 fi
 
-## Install casks defined in /brew/casks
+## Install casks defined in dotfiles/casks.txt
 source brewcaskinstall.sh
 
 ## Install Spacemacs
