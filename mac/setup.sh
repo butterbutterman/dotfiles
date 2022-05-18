@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "Setting up MacOS!"
+echo "Setting up MacOS:"
 
 ## Check if homebrew is installed. If not, install it.
 if ! command -v brew &> /dev/null
@@ -10,7 +10,7 @@ then
     exit
 fi
 
-## Install casks defined in /brew/casks
+## Install casks
 source brewcaskinstall.sh
 
 ## Install Spacemacs

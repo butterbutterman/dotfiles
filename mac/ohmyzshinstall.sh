@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+echo "Setting up oh-my-zsh:"
+
 if [ ! -d "$HOME/.oh-my-zsh" ];
 then
     echo "Installing oh-my-zsh..."

@@ -1,0 +1,12 @@
+rectangle
+bitwarden
+joplin
+visual-studio-code
+docker
+firefox
+brave-browser
+tor-browser
+telegram
+discord
+slack
+spotify
